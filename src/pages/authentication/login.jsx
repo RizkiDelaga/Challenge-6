@@ -1,6 +1,6 @@
 // import styles from './login.module.css';
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import carsLogin from '../../assets/images/Cars_Login_Image.png';
 import BCRLogo from '../../assets/images/BCR_Logo.png';
 import axios from 'axios';
@@ -67,11 +67,11 @@ function Login() {
                             <div className="form-container" style={{maxWidth: "350px"}}>
                                 <div className="form-head">
                                     <img src={BCRLogo} alt="logo BCR" />
-                                    <h1>Welcome back</h1>
+                                    <h1>Welcome, Admin BCR</h1>
                                 </div>
                                 <div className="form-content">
                                     <div className="mb-3">
-                                        <label for="inputEmail" className="form-label">Email {dataLogin.email}</label>
+                                        <label for="inputEmail" className="form-label">Email</label>
                                         <input type="email" className="form-control" id="inputEmail"
                                             placeholder="Contoh: johndee@gmail.com" onChange={(e) => {
                                                 setDataLogin({
@@ -81,7 +81,7 @@ function Login() {
                                             }} required />
                                     </div>
                                     <div className="mb-3">
-                                        <label for="inputPassword" className="form-label">Password {dataLogin.password}</label>
+                                        <label for="inputPassword" className="form-label">Password</label>
                                         <input type="password" className="form-control" id="inputPassword" placeholder="6+ karakter" onChange={(e) => {
                                             setDataLogin({
                                                 ...dataLogin,
@@ -98,6 +98,9 @@ function Login() {
                                             userAuthentication(dataLogin)
                                         }
                                     }}>Sign In</button>
+
+                                    <div className="redirect-login mt-2">Don't have an account? <strong><Link to={'/register'} style={{color: 'blue', textDecoration: 'none'}}>Sign Up</Link></strong></div>
+
                                 </div>
                             </div>
                             

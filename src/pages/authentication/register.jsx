@@ -51,7 +51,7 @@ function Register() {
                                 </div>
                                 <div className="form-content">
                                     <div className="mb-3">
-                                        <label for="inputEmail" className="form-label">Email {dataRegistrasi.email}</label>
+                                        <label for="inputEmail" className="form-label">Email</label>
                                         <input type="email" className="form-control" id="inputEmail"
                                             placeholder="Contoh: johndee@gmail.com" onChange={(e) => {
                                                 setDataRegistrasi({
@@ -61,7 +61,7 @@ function Register() {
                                             }} required />
                                     </div>
                                     <div className="mb-3">
-                                        <label for="inputPassword" className="form-label">Password {dataRegistrasi.password}</label>
+                                        <label for="inputPassword" className="form-label">Password</label>
                                         <input type="password" className="form-control" id="inputPassword" placeholder="6+ karakter" onChange={(e) => {
                                             setDataRegistrasi({
                                                 ...dataRegistrasi,
@@ -77,7 +77,7 @@ function Register() {
                                         }
                                     }}>Sign Up</button>
 
-                                    <div className="redirect-login mt-2">Already have an account? <strong><Link to={'/login'} style={{color: 'blue', textDecoration: 'none'}}>Login</Link></strong></div>
+                                    <div className="redirect-login mt-2">Already have an account? <strong><Link to={'/login'} style={{color: 'blue', textDecoration: 'none'}}>Sign In</Link></strong></div>
                                     
                                 </div>
                             </div>

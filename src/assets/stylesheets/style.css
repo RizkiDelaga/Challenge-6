@@ -13,13 +13,13 @@ body {
 
 
 /* NAVBAR SECTION BEGIN */
-.navbar-admin-section {
+.navbar-section {
   position: fixed;
   right: 0;
   top: 0;
 }
 
-.navbar-admin {
+.navbar {
   background-color: white;
   height: 70px;
   width: 100vw;
@@ -29,6 +29,9 @@ body {
 
 
 /* SIDEBAR SECTION BEGIN */
+.collapseSidebar {
+  display: none;
+}
 
 .main-menu {
   position: fixed;
@@ -117,16 +120,18 @@ a:hover {
 
 .btn-cancel,
 .btn-save {
-  padding: 8px 12px !important;
-  border: 2px #0D28A6 solid !important;
-  color: #0D28A6 !important;
-  font-weight: 700 !important;
+  padding: 8px 12px;
+  border: 2px #0D28A6 solid;
+  color: #0D28A6;
+  font-weight: 700;
 }
 
 .btn-cancel:hover,
 .btn-save:hover {
+  padding: 8px 12px;
   background: #0D28A6 !important;
-  color: white !important;
+  color: white;
+  font-weight: 700;
 }
 
 /* ADD NEW CAR END */
@@ -144,6 +149,11 @@ a:hover {
       display: none !important;
       padding: 400px;
   }
+}
+
+.form-head {
+  position: relative;
+  left: -60px;
 }
 
 .form-head h1 {
@@ -183,10 +193,7 @@ a:hover {
   border-radius: 5px;
 }
 
-.redirect-login {
-  font-size: 14px;
-}
-/* LOGIN & REGISTER ADMIN END */
+/* LOGIN ADMIN END */
 
 
 /* LIST CARD BEGIN */
@@ -262,34 +269,41 @@ a:hover {
 }
 
 /* ALERT */
-.success-box {
-  width: 75vw;
-  max-width: 550px;
+.save-box {
+  width: 550px;
   color: #FFFFFF;
   background-color: #73CA5C !important;
 }
 
 .delete-box {
-  width: 75vw;
-  max-width: 550px;
+  width: 550px;
   color: #FFFFFF;
   background-color: #151515;
 }
 
-.error-box {
-  width: 75vw;
-  max-width: 550px;
-  color: #FFFFFF;
-  background-color: #ff0004 !important;
-}
-
-.modal-center {
-  top: 50% !important;
-  transform: translateY(-50%) !important;
-}
-
-
 /* POPUP */
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
 .popup {
   padding: 24px 32px;
   background: #FFFFFF;
@@ -297,6 +311,7 @@ a:hover {
   border-radius: 4px;
   max-width: 387px;
   height: 333px;
+  position: relative;
   transition: all 0.5s ease-in-out;
   align-items: center;
 }
